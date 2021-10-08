@@ -14,6 +14,7 @@ $('.owl-carousel').owlCarousel({
 
     loop: true,
     autoplay: true,
+    center:true,
     autoplayTimeout:3000,
     nav:true,
     responsive:{
@@ -24,12 +25,13 @@ $('.owl-carousel').owlCarousel({
             items:1
         },            
         960:{
-            items:3
+            items:1
         },
         1200:{
-            items:3
+            items:1
         }
     },
+    
     navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
 
 });
