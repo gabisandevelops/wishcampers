@@ -502,7 +502,8 @@ main .site-hero2{
   .one3 button{
       background-color: transparent;
       border-style: solid;
-      border-width: 2px; 
+      border-width: 1px; 
+      
       border-color: #8e0100;
       margin-left: 450px;
       width: 150px;
@@ -1105,6 +1106,9 @@ p{
         
     }
 
+    .raya{
+        display: none;
+    }
 
 .nav{
     min-height: 15vh;
@@ -1167,15 +1171,19 @@ main .impact{
 main .impact .container{
     
     display: grid;
-    
+ 
     grid-template-columns: repeat(4, 1fr);
     column-gap: 10px;
+    grid-template-areas:
+    "e a  b c";
+  align-items: start;
     
     
 }
 
 
 main .impact .container > div{
+    grid-area: b;
     flex-grow: 1;
     flex-basis: 0;
     padding: 0rem 0rem;
@@ -1185,37 +1193,95 @@ main .impact .container > div{
 
 
 main .impact .container .impact1{
-    background-color: #900404;
-    color: white;
+    padding: 10px;
+    grid-area: b;
+    height: 350px;
+    background-color: #f5f5f5;
+    font-weight: 400;
+    color: #838383;
 
 }
 
+
+.project{
+width: 100%;
+}
+
+
+.project .titleproject{
+padding-left: 60%;
+color: #3b3a3a;
+
+}
+
+.project .raya{
+   width: 300px;
+   background-color: #3b3a3a;
+   height: 3px;
+   padding-right: 25%;
+    margin-bottom: -100px;
+   margin-left: 300px;
+   margin-top: 50px;
+}
+
+
+
 main .impact .container .impact1 img{
-    height: 50%;
+   
+    height: 200px;
     width: 100%;
 }
 
+
+
+
 main .impact .container .impact2{
-    background-color: #202020;
-    color: white;
-    opacity: 0.6;
+    padding: 10px;
+    grid-area: c;
+    height: 350px;
+    background-color: #f5f5f5;
+    color: #838383;
+
+}
+
+main .impact .container .impact2 img{
+    height: 200px;
+    width: 100%;
 }
 
 main .impact .container .impact3{
-    background-color: #e2e1e167;
-    opacity: 0.6;
+    padding: 10px;
+    grid-area: a;
+    height: 350px;
+    background-color: #f5f5f5;
+    color: #838383;
+
 }
 
-main .impact .container .impact4 p{
-    color: white;
+main .impact .container .impact3 img{
+    height: 200px;
+    width: 100%;
 }
+
 
 main .impact .container .impact1 p{
-    color: white;
+    color: #969696;
 }
 
 main .impact .container .impact2 p{
-    color: white;
+    color: #969696;
+}
+
+
+
+main .impact .container .impact1 h2{
+    color: #969696;
+    font-weight: 600;
+}
+
+main .impact .container .impact2 h2{
+    font-weight: 600;
+    color: #969696;
 }
 
 main .impact .container .impact4{
