@@ -1,10 +1,10 @@
 <?php
 include_once 'database.php';
-
+/* $submit = $_POST['submit']; */
 
 
 if(isset($_POST['submit'])){
-  echo 'llego';
+  echo '<br> llego';
     $pname = $_POST['p_name'];
     $pyear = $_POST['p_year'];
     $plocation = $_POST['p_location'];
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 
 }
 else{
-  echo 'no llego el submit';
+  echo '<br> no llego el submit';
 }
 
 
