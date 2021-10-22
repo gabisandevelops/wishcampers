@@ -1,3 +1,11 @@
+<?php
+
+include 'php/database.php';
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,31 +103,30 @@
 
     <section class="contact">
         <h2>Get in Touch</h2>
-        <form action="" method="post">
+        <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
 
-            <input type="text" placeholder="Project Name" id="p_name">  <br><br>
-            <input type="text" placeholder="year" id="p_year"> <br><br>
-            <input type="file" placeholder="Image" id="p_image" > <br><br>
-            <input type="text" placeholder="Location" id="p_location"> <br><br>
+            <input type="text" placeholder="Project Name" id="p_name" name="p_name">  <br><br>
+            <input type="text" placeholder="year" id="p_year" name="p_year" > <br><br>
+            <input type="file" placeholder="Image" id="p_image" name="p_image" > <br><br>
+            <input type="text" placeholder="Location" id="p_location" name="p_location"> <br><br>
            
-            <input type="text" placeholder="Project Class" id="p_class"> <br><br>
+            <input type="text" placeholder="Project Class" id="p_class" name="p_class"> <br><br>
                        
-            <input type="text" placeholder="Resident Profile" id="resident_prof"> <br><br>
+            <input type="text" placeholder="Resident Profile" id="resident_prof" name="resident_prof"> <br><br>
 
-            <input type="text" placeholder="Subsidies" id="subsidies"> <br><br>
-
-            
-            <input type="text" placeholder="Financing" id="financing"> <br><br>
+            <input type="text" placeholder="Subsidies" id="subsidies" name="subsidies" > <br><br>
 
             
-            <input type="text" placeholder="Agency" id="agency"> <br><br>
+            <input type="text" placeholder="Financing" id="financing"  name="financing"> <br><br>
 
             
-            <input type="text" placeholder="Joint Venture Partners" id="joint_ven_part"> <br><br>
+            <input type="text" placeholder="Agency" id="agency" name="agency"> <br><br>
 
             
-            <button type="submit" class="btn" id="submit" name="
-            submit"> </button>
+            <input type="text" placeholder="Joint Venture Partners" id="joint_ven_part" name="joint_ven_part"> <br><br>
+
+            
+            <button type="submit" class="btn" name="boton"  id="boton"> </button>
         </form>
   
          <br><br>
@@ -129,11 +136,11 @@
 
 
     <?php
-    include_once 'php/database.php';
+  
     /* $submit = $_POST['submit']; */
     
     
-    if(!isset($_POST['submit'])){
+    if(isset($_POST['boton'])){
       echo '<br> llego';
         $pname = $_POST['p_name'];
         $pyear = $_POST['p_year'];
@@ -149,15 +156,15 @@
     
         
     
-        $insertar = "INSERT INTO projects(p_name,p_year,p_image,p_location, p_class, resident_prof, subsidies, financing, agency, joint_ven_part) VALUES ($pname,$pyear, $pimage, $plocation, $pclass, $resident, $subsidies, $financing, $agency, $joint);";
+        $insertar = "INSERT INTO projects(p_name,p_year,p_image,p_location, p_class, resident_prof, subsidies, financing, agency, joint_ven_part) VALUES ('{$pname}','{$pyear}', '{$pimage}', '{$plocation}', '{$pclass}', '{$resident}','{$subsidies}', '{$financing}', '{$agency}', '{$joint}');";
     
     
         $res_insert = mysqli_query($connect, $insertar);
     
-        echo $res_insert;
+        /* echo $res_insert; */
     
         if ($res_insert == true) {
-            echo 'Su registro ha sido exitoso';
+            echo '<script> alert("Su registro ha sido exitoso") </script>';
           } else {
             echo 'Error, no se pudo registrar';
           }

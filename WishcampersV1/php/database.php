@@ -1,7 +1,7 @@
 <?php 
 $host = "localhost";
 $dbuser = "root";
-$dbpwd = "";
+$dbpwd = "241995jmSK";
 $db = "wishcampers";
 
 $connect = mysqli_connect ($host, $dbuser, $dbpwd);
